@@ -7,7 +7,21 @@ files:
     overwrite: true
     exclude:
       - .env
-
+permissions:
+  - object: /var/www
+    pattern: "*Skillzcafe*"
+    owner: ubuntu
+    group: ubuntu
+    mode: 775
+    type:
+      - directory
+  - object: /var/www/Skillzcafe
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 664
+    type:
+      - file
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
