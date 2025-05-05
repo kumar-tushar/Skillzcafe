@@ -1,12 +1,17 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
     destination: /var/www/Skillzcafe
+    overwrite: true
+    exclude:
+      - .env
+
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
   ApplicationStart:
     - location: scripts/restart_pm2.sh
-      timeout: 300
+      timeout: 60
