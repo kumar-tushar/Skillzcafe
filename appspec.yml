@@ -20,9 +20,6 @@ permissions:
     type:
       - file
 hooks:
-  BeforeInstall:
-    - location: scripts/clean_folder.sh
-      timeout: 300
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
