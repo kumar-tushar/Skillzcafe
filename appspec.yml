@@ -1,10 +1,9 @@
 version: 0.0
 os: linux
-
 files:
   - source: /
     destination: /var/www/Skillzcafe
-
+    overwrite: true
 permissions:
   - object: /var/www
     pattern: "*Skillzcafe*"
@@ -20,16 +19,13 @@ permissions:
     mode: 664
     type:
       - file
-
 hooks:
-  BeforeInstall:
-    - location: scripts/clean_folder.sh
-      timeout: 60
-
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
+      runas: ubuntu
 
   ApplicationStart:
     - location: scripts/restart_pm2.sh
-      timeout: 60
+      timeout: 300
+      runas: ubuntu
