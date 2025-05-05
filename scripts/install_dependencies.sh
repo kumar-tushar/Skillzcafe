@@ -1,4 +1,4 @@
-cd /home/ubuntu/Veefin-Backend
+cd /var/www/Skillzcafe
 sudo chown -R ubuntu:ubuntu /var/www/Skillzcafe
 
 git branch
