@@ -8,4 +8,3 @@ cd /var/www/Skillzcafe
 # Stop and start the app by name
 pm2 stop skillzcafeapi || true
 pm2 start index.js --name "skillzcafeapi"
-

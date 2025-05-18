@@ -1,4 +1,4 @@
-cd /var/www/
+cd /var/www/Skillzcafe
 sudo chown -R ubuntu:ubuntu /var/www/Skillzcafe
 
 git branch
