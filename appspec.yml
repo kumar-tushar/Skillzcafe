@@ -5,7 +5,7 @@ files:
     destination: /var/www/Skillzcafe
     overwrite: true
 permissions:
-  - object: /var/www
+  - object: /var/www/
     pattern: "*Skillzcafe*"
     owner: ubuntu
     group: ubuntu
@@ -20,11 +20,17 @@ permissions:
     type:
       - file
 hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: ubuntu
+
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ubuntu
+
   ApplicationStart:
-    - location: scripts/restart_pm2.sh
+    - location: scripts/application_start.sh
       timeout: 300
       runas: ubuntu
