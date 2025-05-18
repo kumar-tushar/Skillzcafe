@@ -4,14 +4,16 @@ files:
   - source: /
     destination: /var/www/Skillzcafe
     overwrite: true
+
 permissions:
-  - object: /var/www/
-    pattern: "*Skillzcafe*"
+  - object: /var/www/Skillzcafe
+    pattern: "**"
     owner: ubuntu
     group: ubuntu
     mode: 775
     type:
       - directory
+
   - object: /var/www/Skillzcafe
     pattern: "**"
     owner: ubuntu
