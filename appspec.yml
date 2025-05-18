@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /var/www/Skillzcafe
     overwrite: true
-
+file_exists_behavior: OVERWRITE
 permissions:
   - object: /var/www/Skillzcafe
     pattern: "**"
